@@ -1,0 +1,149 @@
+/* Breakpoints - MOBILE FIRST approach */ 
+$Medium:  47.5rem;  // Tablet (47.5 rem to 63.938 rem)
+$Large:  64rem;     // Laptop (
+$XLarge:  85rem;    // Desktop
+
+:export {
+  Large: $Large;
+}
+
+/* Layout styles */
+*, *::before, *::after{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0 12px;      
+  
+  @media (min-width: $Large) {
+    margin: 0 36px;  
+  }
+  @media (min-width: $XLarge) {
+    margin: 0 40px;  
+  }
+}
+
+h1 {
+  font-size: clamp(
+    1.5rem,
+    4vw + 1rem,
+    3rem
+  );
+  margin-bottom: 0.5em;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+/* Slider styles */
+.photo-viewer{
+  display: flex;
+  flex-direction: column;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw); 
+  width: 100vw;
+  padding-left: 8px;
+
+  @media (min-width: $Large) {   
+    margin: 0;
+    width: auto;
+    padding: 0;
+  }
+}
+
+#photo-roll{
+  display: block;
+  overflow-x: scroll;
+
+  a {
+    font-size: 1.2em;
+    padding: 0 0.75rem 0 0;
+    }
+
+  @media (min-width: $Large) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; //8px
+
+    a {
+      font-size: 1.5em;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  @media(min-width: $XLarge){
+    gap: 0.75rem; // 12px
+
+    a {
+      font-size: 1.6em;
+    }
+  }
+}
+
+.image-wrapper{
+    flex: 0 0 32.8%;
+
+  @media(min-width: $Medium){
+    flex: 0 0 32.5%;
+  }
+  @media(min-width: $XLarge){
+    flex: 0 0 32.7%;
+  }
+}
+
+.clickable-image{
+  border-radius: 16px;
+  object-fit: contain;
+
+  @media (max-width: $Medium) {
+    width: clamp(24rem, 100%, 30rem);
+  }
+  @media (max-width: $Large) {
+    width: clamp(18rem, 100%, 24rem);
+
+  }
+  @media (min-width: $XLarge) {
+    width: clamp(24rem, 100%, 95rem);
+  }
+}
+
+/* Customize Flickity */
+.flickity-prev-next-button:disabled { 
+  display: none;
+}
+
+.flickity-prev-next-button { 
+  top: 45%;
+  background-color: white;
+  border: 1px solid lightgray;
+  box-shadow: 0px 5px 7px 2px rgba(181,181,181,0.5);
+}

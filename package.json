@@ -1,0 +1,24 @@
+{
+  "name": "gridtosliderproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@parcel/bundler-default": "2.3.2",
+    "flickity": "2.3.0",
+    "node-sass.js": "0.7.1",
+    "prettier": "2.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "typescript": "4.4.4"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
+  "keywords": []
+}
